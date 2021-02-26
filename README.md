@@ -1,6 +1,6 @@
-# hse Streaming Source
+# Grafana hse Streaming Source
 
-This is a simple streaming datasource using WebSockets. It is adaptive: The first packet (as JSON) received via WebSocket will set the structure of the metrcis sent to Grafana. 
+This is a simple streaming datasource for Grafana using WebSockets. It is adaptive: The first packet (as JSON) received via WebSocket will set the structure of the metrcis sent to Grafana. 
 
 ![Test Dashboard](doc/test-dashboard.gif)
 
