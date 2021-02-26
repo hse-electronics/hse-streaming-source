@@ -1,0 +1,21 @@
+﻿<ContentView>
+	<StackLayout Margin="new Thickness(20)">
+		<Frame CornerRadius="10" BackgroundColor="Color.LightBlue">
+			<StackLayout>
+				<Button Text="@(isSending ? "Pause" : "Start")" OnClick="ToggleSending" />
+				<StackLayout Orientation="StackOrientation.Horizontal" HorizontalOptions="LayoutOptions.Center">
+					<Label Text="@Math.Round(GrafanaStreaming.OrientationData.X,2).ToString("0.00")"></Label>
+					<Label Text="@Math.Round(GrafanaStreaming.OrientationData.Y,2).ToString("0.00")"></Label>
+					<Label Text="@Math.Round(GrafanaStreaming.OrientationData.Z,2).ToString("0.00")"></Label>
+				</StackLayout>
+				<Label Text="TCP Listen Adresses:"></Label>
+				@foreach (var ip in IPAddresses)
+				{
+					<Label Text="@($"ws://{ip}:{Port}")" />
+				}
+				<Label Text="@($"Active Connections: {GrafanaStreaming.OpenConnections}")"
+					   TextColor="@(GrafanaStreaming.OpenConnections > 0 ? Color.Green : Color.DarkGray)"></Label>
+			</StackLayout>
+		</Frame>
+	</StackLayout>
+</ContentView>

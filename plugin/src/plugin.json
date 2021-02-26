@@ -1,0 +1,33 @@
+{
+  "type": "datasource",
+  "name": "hse Streaming Source",
+  "id": "hse-streaming-datasource",
+  "streaming": true,
+  "metrics": true,
+  "info": {
+    "description": "",
+    "author": {
+      "name": "hse-electronics GmbH, Max Reble",
+      "url": "https://hse-electronics.com"
+    },
+    "keywords": ["streaming"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://hse-electronics.com"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/hse-electronics/hse-streaming-source/blob/main/LICENSE"
+      }
+    ]
+  },
+  "dependencies": {
+    "grafanaVersion": "7.0.x",
+    "plugins": []
+  }
+}

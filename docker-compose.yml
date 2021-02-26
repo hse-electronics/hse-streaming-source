@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  testserver:
+    image: ${DOCKER_REGISTRY-}hsegrafanastreamingtestserver
+    build:
+      context: .
+      dockerfile: test-server/HSE.Grafana.Streaming.TestServer/Dockerfile
+    ports:
+      - 8181:80
+  grafana:
+    image: hse-streaming-grafana
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana/volume:/var/lib/grafana
+  

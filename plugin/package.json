@@ -1,0 +1,31 @@
+{
+  "name": "hse-streaming-datasource",
+  "version": "0.1.0",
+  "description": "An WebSocket Client to use with Grafana streaming",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch"
+  },
+  "repository": "github:hse-electronics/hse-streaming-source",
+  "bugs": {
+    "url": "https://github.com/hse-electronics/hse-streaming-source/issues",
+    "email": "plugins@hse-electronics.com"
+  },
+  "author": "hse-electronics GmbH, Max Reble",
+  "license": "MIT",
+  "devDependencies": {
+    "@grafana/data": "next",
+    "@grafana/runtime": "next",
+    "@grafana/toolkit": "next",
+    "@grafana/ui": "next",
+    "@testing-library/jest-dom": "5.4.0",
+    "@testing-library/react": "^10.0.2",
+    "@types/lodash": "latest",
+    "@types/ws": "^7.2.4"
+  },
+  "engines": {
+    "node": ">=12 <13"
+  }
+}
