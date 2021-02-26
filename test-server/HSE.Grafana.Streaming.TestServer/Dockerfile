@@ -6,9 +6,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["HSE.Grafana.Streaming.TestServer/HSE.Grafana.Streaming.TestServer.csproj", "HSE.Grafana.Streaming.TestServer/"]
+COPY ["test-server/HSE.Grafana.Streaming.TestServer/HSE.Grafana.Streaming.TestServer.csproj", "HSE.Grafana.Streaming.TestServer/"]
 RUN dotnet restore "HSE.Grafana.Streaming.TestServer/HSE.Grafana.Streaming.TestServer.csproj"
-COPY . .
+COPY "test-server/" .
 WORKDIR "/src/HSE.Grafana.Streaming.TestServer"
 RUN dotnet build "HSE.Grafana.Streaming.TestServer.csproj" -c Release -o /app/build
 

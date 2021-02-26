@@ -16,17 +16,15 @@ RUN yarn dev
 
 
 FROM grafana/grafana:7.4.3 AS grafana
-RUN mkdir /var/lib/grafana/plugins/hse-streaming-datasource/
 COPY --from=plugin-build /app/dist/ /var/lib/hse/hse-streaming-datasource
 COPY grafana/provisioning/ /etc/grafana/provisioning/
+COPY grafana/dashboards/ /var/lib/grafana/dashboards/
 ENV GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/test-dashboard.json
-#this is a little bit stupid but as we want the grafana.db to be in the volume
+#this is a little bit stupid workaround but as we want the grafana.db to be in the volume
 #and the grafana.db is in the same directory as the plugin folder
 #we have to copy the new plugin on the start of the container so it wont be
-#overwritten by an old version already in the volume.
+#overwritten by an old version already in the volume. This is only important
+#for development. 
 COPY grafana/run-and-copy.sh /run-and-copy.sh
-USER 0
+USER grafana
 ENTRYPOINT ["/run-and-copy.sh"]
-#this does not work :/
-#COPY --from=plugin-build /app/dist/ /usr/share/grafana/public/app/plugins/datasource/hse-streaming-datasource
-#COPY --from=plugin-build /app/dist/ /var/lib/grafana-hse/hse/
