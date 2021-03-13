@@ -23,6 +23,7 @@ grafana/volume/plugins
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+build/
 x64/
 x86/
 [Aa][Rr][Mm]/

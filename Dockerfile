@@ -12,7 +12,7 @@ FROM node-base AS plugin-build
 COPY plugin/ /app/
 RUN yarn dev
 #enable this for prod
-#RUN yarn build 
+RUN yarn build 
 
 
 FROM grafana/grafana:7.4.3 AS grafana

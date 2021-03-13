@@ -1,0 +1,18 @@
+﻿label{
+	color: white;
+	font-size: medium;
+}
+
+.data label{
+	font-size: large;
+}
+
+button{
+	background-color: black;
+	color: white;
+	font-size:large;
+}
+
+.content {
+	background-color: #293133;
+}

@@ -8,7 +8,7 @@ namespace HSEStreamingExampleApp
 	public partial class GrafanaStreamingTest
 	{
 
-		private bool isSending = false;
+		private bool isSending = true;
 		private GrafanaStreamingService GrafanaStreaming { get; } = new GrafanaStreamingService();
 		private IEnumerable<string> IPAddresses { get; }
 		private int Port { get; }
@@ -27,6 +27,7 @@ namespace HSEStreamingExampleApp
 		protected override void OnInitialized()
 		{
 			GrafanaStreaming.OnSend += _streaming_OnSend;
+			GrafanaStreaming.Start();
 			base.OnInitialized();
 		}
 
