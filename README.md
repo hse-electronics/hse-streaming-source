@@ -29,6 +29,6 @@ A much cooler example is the Android App which uses the Orientation Sensor. It's
 To use the app simply install the apk, turn on your WiFi, run the app and click on `START` You should see an IP-Address and a port. Choose the IP Address of your WiFi (e.g. 192.168.0.100) and enter this on top of the Grafana Dashboard in server like this:
 `ws://192.168.0.100:8181` (Change the IP)
 
-# Download builds (coming soon...)
-* Pre-Built hse Streaming Source Grafana Plugin
-* Pre-Built Android App which uses the OrientationSensor
+# Download builds 
+* Pre-Built hse Streaming Source Grafana Plugin: https://github.com/hse-electronics/hse-streaming-source/releases
+* Pre-Built Android App which uses the OrientationSensor: https://hse-electronics.com/download/hse-streaming-source-test-app/
